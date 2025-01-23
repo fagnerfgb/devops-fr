@@ -5,15 +5,11 @@
 
 ### Exécution de l'application dans un conteneur
 ```bash
-# Navigue vers le répertoire "src" dans le projet "conversao-temperatura"
+# Accède au répertoire où se trouve le projet "celsius-farenheit"
 cd docker/projets/celsius-farenheit/src/
 
-# exécute un conteneur avec l'image Ubuntu
-# en mode interactif avec le terminal bash
-# fait le bind du port 8080 du serveur
-# au port 8080 du conteneur
-docker container run --rm --name temperature -it -p 8080:8080 ubuntu /bin/bash
-
+# Exécute un conteneur appelé "temperature" de manière interactive, en mappant le port 8080 de l'hôte au port 8080 du conteneur, en utilisant l'image Ubuntu
+docker container run --name temperature -it -p 8080:8080 ubuntu /bin/bash
 ```
 ### Installation de Node.js dans le conteneur
 ```bash
@@ -37,7 +33,6 @@ node -v
 ```
 ### Copie du répertoire de l'application du serveur vers le conteneur
 ```bash
-
 # Copie le contenu du répertoire actuel (.) vers le répertoire "/app" dans le conteneur Docker identifié par le nom "temperature"
 docker container cp . temperature:/app
 ```
@@ -50,6 +45,7 @@ cd /app
 # Installe les dépendances du projet définies dans le fichier package.json
 npm install
 
+# Lance une commande pour corriger automatiquement les vulnérabilités trouvées dans les dépendances npm
 npm audit fix
 
 # Démarre le serveur du projet en utilisant le fichier server.js
