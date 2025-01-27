@@ -1,0 +1,6 @@
+FROM ubuntu
+LABEL author="Fagner Geraldes Braga"
+LABEL contact="fagner.fgb@gmail.com"
+RUN apt update && apt install curl -y
+ENTRYPOINT [ "echo", "Hello World !" ]
+CMD [ "CMD et ENTRYPOINT" ]

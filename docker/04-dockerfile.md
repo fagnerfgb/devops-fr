@@ -1,7 +1,7 @@
 #Auteur : Fagner Geraldes Braga  
 #Date de création : 24/01/2025  
-#Date de mise à jour : 24/01/2025  
-#Version : 0.01  
+#Date de mise à jour : 27/01/2025  
+#Version : 0.02  
 
 ## Tous les fichiers Dockerfile de cette section se trouvent dans le dossier 04-dockerfile
 ### Dockerfile01
@@ -241,3 +241,75 @@ exit
 ![25](img/25.png)
 
 ![26](img/26.png)
+
+### USER
+### Dockerfile11-usr
+[Dockerfile11-usr](04-dockerfile/Dockerfile11-usr)
+
+```bash
+
+docker build -t ubuntu-curl -f Dockerfile11-usr .
+
+
+docker container run --rm -it ubuntu-curl /bin/bash
+
+ls
+
+cat fagner.txt
+
+exit
+```
+![27](img/27.png)
+
+### ENTRYPOINT
+### Dockerfile12-epoint
+[Dockerfile12-epoint](04-dockerfile/Dockerfile12-epoint)
+
+```bash
+docker build -t ubuntu-curl -f Dockerfile12-epoint .
+
+docker container run --rm ubuntu-curl 
+```
+![28](img/28.png)
+
+### ENTRYPOINT COMBINADO COM CMD
+### Dockerfile13-epointcmd
+[Dockerfile13-epointcmd](04-dockerfile/Dockerfile13-epointcmd)
+
+```bash
+docker build -t ubuntu-curl -f Dockerfile13-epointcmd .
+
+docker container run --rm ubuntu-curl 
+
+docker container run --rm ubuntu-curl teste
+```
+![29](img/29.png)
+
+### entrypoint.sh
+[entrypoint.sh](04-dockerfile/entrypoint.sh)
+
+### SCRIPT ENTRYPOINT
+### Dockerfile14-sc-epoint
+[Dockerfile14-sc-epoint](04-dockerfile/Dockerfile14-sc-epoint)
+
+```bash
+docker build -t ubuntu-curl -f Dockerfile14-sc-epoint .
+
+docker container run --rm ubuntu-curl 
+
+docker container run --rm ubuntu-curl Fagner
+```
+![30](img/30.png)
+
+### SCRIPT ENTRYPOINT
+### Dockerfile15-mix
+[Dockerfile15-mix](04-dockerfile/Dockerfile15-mix)
+
+```bash
+docker build -t ubuntu-curl -f Dockerfile15-mix .
+
+docker container run --rm ubuntu-curl 
+
+docker container run --rm ubuntu-curl Fagner
+```
+![31](img/31.png)
