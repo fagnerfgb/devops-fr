@@ -29,3 +29,6 @@ docker image rm -f $(docker image ls -qa)
 # Supprime toutes les images inutilisées pour libérer de l'espace
 docker image prune
 ```
+![33](img/33.png)
+
+![32](img/32.png)
