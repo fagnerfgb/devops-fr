@@ -1,7 +1,7 @@
-#Autor: Fagner Geraldes Braga  
-#Data de criação: 03/01/2025  
-#Data de atualização: 03/01/2025  
-#Versão: 0.01
+#Auteur : Fagner Geraldes Braga  
+#Date de création : 27/01/2025  
+#Date de mise à jour : 27/01/2025  
+#Version : 0.01  
 
 ## Docker Registry
 

@@ -1,0 +1,16 @@
+FROM ubuntu
+EXPOSE 8080
+RUN useradd node
+LABEL author="Fagner Geraldes Braga"
+LABEL contact="fagner.fgb@gmail.com"
+RUN apt update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh && \
+    bash nodesource_setup.sh && \
+    apt-get install -y nodejs
+WORKDIR /app
+COPY --chown=node:node package*.json .
+RUN npm install
+COPY --chown=node:node . .
+ENTRYPOINT [ "node", "server.js" ]
+USER node
