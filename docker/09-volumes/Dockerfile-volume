@@ -1,0 +1,5 @@
+FROM ubuntu:22.04
+LABEL author="Fagner Geraldes Braga"
+LABEL contact="fagner.fgb@gmail.com"
+WORKDIR /app
+VOLUME /app
