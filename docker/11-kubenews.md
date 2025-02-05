@@ -8,6 +8,8 @@
 ### Dockerfile
 [Dockerfile](/docker/projets/kube-news/src/Dockerfile)
 
+![app-kubenews](img/app-kubenews.png)
+
 ```bash
 # Se déplace vers le répertoire contenant le projet "kube-news"
 cd $(pwd)/docker/projets/kube-news
