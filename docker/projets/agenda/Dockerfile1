@@ -1,0 +1,22 @@
+FROM tomcat:10.1.34-jdk21-temurin-noble
+EXPOSE 8080
+ARG CONTEXT="context.xml"
+ARG TOMCAT="/opt/tomcat"
+RUN apt update && apt install git vim openjdk-21-jdk openjdk-21-jre software-properties-common build-essential wget -y
+RUN wget -v -O /tmp/tomcat10.tar.gz https://dlcdn.apache.org/$tomcat/tomcat-10/v10.1.34/bin/apache-tomcat-10.1.34.tar.gz
+RUN tar -xzvf /tmp/tomcat10.tar.gz -C /tmp
+RUN mv -v /tmp/apache-tomcat* $TOMCAT
+COPY server.xml $TOMCAT/conf/
+COPY tomcat-users.xml $TOMCAT/conf/
+COPY $CONTEXT $TOMCAT/conf/
+COPY $CONTEXT $TOMCAT/webapps/manager/META-INF/
+COPY $CONTEXT $TOMCAT/webapps/host-manager/META-INF/
+COPY $CONTEXT $TOMCAT/webapps/examples/META-INF/
+COPY $CONTEXT $TOMCAT/webapps/docs/META-INF/
+COPY tomcat10.service /etc/systemd/system/
+COPY agenda_bootstrap.war $TOMCAT/webapps
+RUN useradd -m -d /opt/tomcat -U -s /bin/false tomcat
+RUN chown -Rv tomcat:tomcat $TOMCAT && chmod -Rv u+x $TOMCAT/bin
+#RUN systemctl daemon-reload && systemctl enable tomcat10 && systemctl start tomcat10
+ENTRYPOINT ["/opt/tomcat/bin/catalina.sh", "run"]
+
