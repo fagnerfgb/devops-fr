@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users xmlns="http://tomcat.apache.org/xml"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+              version="1.0">
+	<!-- Configuração dos Papéis (Roles) de administração do Servidor Web Apache Tomcat -->
+	<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
+	<role rolename="manager-jmx"/>
+	<role rolename="manager-status"/>
+	<role rolename="manager"/>
+	<role rolename="admin-gui"/>
+	<role rolename="admin"/>
+	<role rolename="tomcat"/>
+	<role rolename="role1"/>
+	<!-- Configuração do Usuário, Senha e Papéis do administrador do Servidor Web Tomcat -->
+	<!-- Para criar novos usuários no Apache TomCAT Server só copiar a linha abaixo e colar -->
+	<!-- na próxima linha alterando o nome, senha e papeis do usuário -->
+	<user username="admin" password="123@senac" roles="manager-gui,manager,admin-gui,admin,tomcat,role1"/>
+</tomcat-users>
