@@ -1,7 +1,7 @@
 #Auteur : Fagner Geraldes Braga  
 #Date de création : 06/02/2025  
-#Date de mise à jour : 10/02/2025  
-#Version : 0.02  
+#Date de mise à jour : 13/02/2025  
+#Version : 0.03  
 
 ## Docker Compose
 
