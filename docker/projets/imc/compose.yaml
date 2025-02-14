@@ -1,0 +1,12 @@
+services:
+  srv-imc:
+    container_name: srv-imc
+    image: fagnerfgb/imc:v1
+    ports:
+      - "8080:80"
+    networks:
+      - srv-imc-net
+networks:
+  srv-imc:
+    name: srv-imc-net
+    driver: bridge

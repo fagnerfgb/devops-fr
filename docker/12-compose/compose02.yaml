@@ -1,0 +1,9 @@
+services:
+  nginx:
+    container_name: fgb-nginx
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    command: 
+      - echo
+      - Hello world

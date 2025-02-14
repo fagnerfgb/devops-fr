@@ -1,0 +1,12 @@
+services:
+  srv-astrojupiter:
+    container_name: srv-astrojupiter
+    image: fagnerfgb/astrojupiter:v1
+    ports:
+      - "8080:80"
+    networks:
+      - srv-astrojupiter
+networks:
+  srv-astrojupiter:
+    name: srv-astrojupiter
+    driver: bridge  

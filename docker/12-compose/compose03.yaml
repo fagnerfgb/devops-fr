@@ -1,0 +1,11 @@
+services:
+  nginx:
+    container_name: fgb-nginx
+    image: nginx:latest
+    ports:
+      - "8080:80"
+  nginx2:
+    container_name: fgb-nginx2
+    image: nginx:latest
+    ports:
+      - "8081:80"

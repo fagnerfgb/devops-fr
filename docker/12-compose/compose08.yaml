@@ -1,0 +1,23 @@
+services:
+  postgre:
+    container_name: fgb-postgre
+    image: postgres:12.17
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: pwdkubenews
+      POSTGRES_USER: kubenews
+      POSTGRES_DB: kubenews
+    volumes:
+      - volume-fgb-postgre:/var/lib/postgresql/data
+    networks:
+      - kube_news_net
+
+volumes:
+  volume-fgb-postgre:
+    name: fgb-postgre-volume
+
+networks:
+  kube_news_net:
+    name: knews_network
+    driver: bridge

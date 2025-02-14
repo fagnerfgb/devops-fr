@@ -1,0 +1,10 @@
+services:
+  nginx:
+    container_name: fgb-nginx
+    image: nginx:latest
+    network_mode: "host"
+  curl:
+    container_name: fgb-curl
+    image: nginx:latest
+    extra_hosts:
+      fagner.com.br: "192.168.2.20"
