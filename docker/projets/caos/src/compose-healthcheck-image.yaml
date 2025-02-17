@@ -1,0 +1,6 @@
+services:
+  web:
+    image: fagnerfgb/caos:v2
+    ports:
+    - 8080:3000
+    restart: always
