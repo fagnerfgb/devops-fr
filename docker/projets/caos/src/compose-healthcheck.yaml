@@ -6,7 +6,7 @@ services:
     restart: always
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:3000/health" ]
-      interval: 30s
+      interval: 10s
       timeout: 5s
       retries: 2
       start_period: 30s
