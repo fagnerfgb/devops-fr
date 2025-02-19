@@ -5,7 +5,7 @@ services:
     - 8080:3000
     restart: always
     cpuset: "0"
-    memswap_limit: 512M
+    memswap_limit: 1G
     deploy:
       resources:
         limits:
