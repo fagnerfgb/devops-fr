@@ -8,14 +8,14 @@
 ### Création d’une image avec la nomenclature correcte pour l’envoi à DockerHub
 
 ### Dockerfile01
-[Dockerfile01](projets/celsius-farenheit/src/Dockerfile01)
+[Dockerfile01](projets/celsius-farenheit/Dockerfile01)
 
 ```bash
 # Change le répertoire actuel pour accéder au dossier source du projet
-cd docker/projets/celsius-farenheit/src/
+cd docker/projets/celsius-farenheit
 
 # Construit une image Docker à partir de Dockerfile01 et lui attribue un tag spécifique
-docker build -t fagnerfgb/celsius-farenheit:v1 -f Dockerfile01 .
+docker build -t fagnerfgb/celsius-farenheit:v1 -f Dockerfile01 ./src
 
 # Ajoute un nouveau tag "latest" à l'image existante avec le tag "v1"
 docker tag fagnerfgb/celsius-farenheit:v1 fagnerfgb/celsius-farenheit:latest
@@ -27,9 +27,6 @@ docker login
 
 # Poussez l'image avec le tag "v1" vers Docker Hub, puis poussez l'image avec le tag "latest"
 docker push fagnerfgb/celsius-farenheit:v1 && docker push fagnerfgb/celsius-farenheit:latest
-
-# Supprime tous les conteneurs existants (actifs et inactifs)
-docker container rm -f $(docker container ls -qa)
 
 # Supprime toutes les images Docker existantes (quelles que soient leurs balises)
 docker image rm -f $(docker image ls -qa)

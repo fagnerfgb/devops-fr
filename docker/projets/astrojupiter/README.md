@@ -28,7 +28,7 @@
 cd docker/projets/astrojupiter
 
 # Construit l'image Docker avec le tag v1 en utilisant le Dockerfile du répertoire actuel
-docker build -t fagnerfgb/astrojupiter:v1 -f Dockerfile .
+docker build -t fagnerfgb/astrojupiter:v1 -f Dockerfile ./src
 
 # Crée un tag "latest" pour l'image nouvellement construite
 docker tag fagnerfgb/astrojupiter:v1 fagnerfgb/astrojupiter:latest
@@ -48,8 +48,8 @@ docker push fagnerfgb/astrojupiter:latest
 
 ### Exécuter le conteneur, tester, supprimer le conteneur et supprimer l’image
 ```bash
-# Lance un conteneur en arrière-plan avec le nom 'srv-astrojupiter', mappant le port 8080 de l'hôte au port 80 du conteneur
-docker container run --name srv-astrojupiter -d -p 8080:80 fagnerfgb/astrojupiter:v1
+# Lance un conteneur en arrière-plan avec le nom 'srv-astrojupiter', mappant le port 8080 de l'hôte au port 8080 du conteneur
+docker container run --name srv-astrojupiter -d -p 8080:8080 fagnerfgb/astrojupiter:v1
 
 # Ouvrir le navigateur et entrer l'URL : http://localhost:8080
 
