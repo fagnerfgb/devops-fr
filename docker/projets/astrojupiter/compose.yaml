@@ -3,10 +3,16 @@ services:
     container_name: srv-astrojupiter
     image: fagnerfgb/astrojupiter:v1
     ports:
-      - "8080:80"
+      - "8080:8080"
     networks:
       - srv-astrojupiter
+    restart: always
+    healthcheck:
+      test: [ "CMD","curl","-f","http://localhost:8080/health.html" ]
+      timeout: 5s
+      retries: 3
+      start_period: 30s
 networks:
   srv-astrojupiter:
     name: srv-astrojupiter
-    driver: bridge  
+    driver: bridge
